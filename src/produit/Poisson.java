@@ -3,17 +3,16 @@ package produit;
 public class Poisson extends Produit {
 	private String date;
 
-	public Poisson(String nom, String unite, String date) {
-		super(nom, unite);
-		this.nom = "poisson";
-		this.unite = "piece";
+	public Poisson(String date) {
+		super("poisson", "piece");
 		this.date = date;
 	}
 
-	public String getNom() {
-		return nom;
-	}
 
 	@Override
-	public String decrireProduit();
+	public String decrireProduit() {
+		StringBuilder chaine = new StringBuilder();
+		chaine.append(getNom() + " pêchés " + date);
+		return chaine.toString();
+	}
 }
